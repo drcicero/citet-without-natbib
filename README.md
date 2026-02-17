@@ -5,7 +5,11 @@ When switching between ACM and Lipics latex classes, therefore all uses of `\tex
 The poor-mans-citet shell script above, uses `pandoc` to convert a bib file to json, and `jq` to convert the json file to a latex file.
 This latex file defines a `\citet{...}` command by pattern matching on the provided bib id.
 
+Setup:
+As just said, you need to install pandoc and jq, for example
+`apt install pandoc jq`.
+
 To use:
-Whenever your bib file changes, re-run `poor-mans-citet.sh`, to regenerate the `bibAuthorNames.tex` containing the citet definition..
+Whenever your bib file changes, re-run `poor-mans-citet.sh`, to write a `bibAuthorNames.tex` file, containing the `\citet` definition.
 In the beginning of your document, add `\input{bibAuthorNames}`, this provides the `\citet` command.
 In your text, use `\citet{bibid}` as you are used to.
